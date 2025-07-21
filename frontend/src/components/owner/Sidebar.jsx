@@ -39,7 +39,7 @@ const Sidebar = () => {
                   "https://toppng.com/uploads/preview/donna-picarro-dummy-avatar-115633298255iautrofxa.png"
             }
             alt="Dummy User"
-            className="h-9 w-14 md:w-9 md:h-14 rounded-full mx-auto"
+            className="h-9 w-14 md:w-[36px] md:h-14 rounded-full mx-auto"
           />
           <input
             type="file"
