@@ -28,9 +28,9 @@ const Navbar = () => {
 
   return (
     <motion.div
-      initial={{ y: -20, opacity: 0 }}
+{/*       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6 }} */}
       className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-borderColor transition-all relative ${
         location.pathname === "/" && "bg-light"
       } `}>
