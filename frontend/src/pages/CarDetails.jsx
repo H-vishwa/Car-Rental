@@ -38,7 +38,7 @@ const CarDetails = () => {
   }, [cars, id]);
 
   return car ? (
-    <div className="h-250 px-6 md:px-12 lg:px-24 xl:px-32 mt-16">
+    <div className="h-350 px-6 md:px-12 lg:px-24 xl:px-32 mt-16">
       <button
         onClick={() => navigate(-1)}
         className="flex items-center gap-2 mb-6 text-gray-500 cursor-pointer">
