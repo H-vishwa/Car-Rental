@@ -28,8 +28,8 @@ const Hero = () => {
       transition={{ duration: 0.8 }}
       className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center mt-10">
       <motion.h1
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: 50, opacity: 0, y:-10}}
+        animate={{ y: 0, opacity: 1, y:0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-4xl md:text-5xl font-semibold">
         Luxury Cars on Rent
