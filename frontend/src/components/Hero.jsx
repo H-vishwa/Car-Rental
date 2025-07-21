@@ -26,7 +26,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center mt-10">
+      className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center mt-10 shadow-[0px_0px_300px_41px_rgba(165,_39,_255,_0.1)]">
       <motion.h1
         initial={{ y: 50, opacity: 0, y:-10}}
         animate={{ y: 0, opacity: 1, y:0 }}
