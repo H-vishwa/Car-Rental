@@ -64,7 +64,7 @@ const Sidebar = () => {
       )}
       <p className="mt-2 text-base max-md:hidden">{user?.name}</p>
 
-      <div className="w-full">
+      <div className="w-[51px]">
         {ownerMenuLinks.map((link, index) => (
           <NavLink
             key={index}
