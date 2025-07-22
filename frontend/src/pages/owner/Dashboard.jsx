@@ -84,7 +84,7 @@ const Dashboard = () => {
 
       <div className="flex flex-wrap items-start gap-6 mb-8 w-full">
         {/* Recent Bookings */}
-        <div className="p-4 md:p-6 border border-borderColor rounded-md max-w-lg w-full">
+        <div className="p-4 md:p-6 border border-borderColor rounded-md max-w-lg w-full overflow-auto">
           <h1 className="text-lg font-medium">Recent Bookings</h1>
           <p className="text-gray-500">Latest customer bookings</p>
           {data.recentBookings.map((booking, index) => (
