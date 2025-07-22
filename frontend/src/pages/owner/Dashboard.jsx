@@ -59,7 +59,7 @@ const Dashboard = () => {
   }, [isOwner]);
 
   return (
-    <div className="px-4 pt-10 md:px-10 flex-1">
+    <div className="px-4 pt-10 md:px-10 flex-1 overflow-hidden">
       <Title
         title={"Admin Dashboard"}
         subTitle={
