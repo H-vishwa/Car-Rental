@@ -7,7 +7,7 @@ const Banner = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col md:flex-row items-center md:items-start justify-between px-8 min-md:pl-14 pt-10 bg-gradient-to-r from-[#5335a2] to-[#a59aeb] max-w-6xl mx-3 md:mx-auto rounded-2xl overflow-hidden shadow-[0px_0px_300px_10px_rgba(165,_39,_255,_0.48)]">
+      className="flex flex-col md:flex-row items-center md:items-start justify-between px-8 min-md:pl-14 mt-10 pt-10 bg-gradient-to-r from-[#5335a2] to-[#a59aeb] max-w-6xl mx-3 md:mx-auto rounded-2xl overflow-hidden shadow-[0px_0px_300px_10px_rgba(165,_39,_255,_0.48)]">
       <div className="text-white">
         <h2 className="text-3xl font-medium">Do You Own a Luxury Car?</h2>
         <p className="mt-2">
