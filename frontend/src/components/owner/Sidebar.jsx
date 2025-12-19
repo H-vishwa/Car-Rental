@@ -28,7 +28,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="relative min-h-screen md:flex flex-col items-center pt-8 max-w-13 md:max-w-60 w-full border-r border-borderColor text-sm">
+    <div className="relative min-h-screen md:flex flex-col items-center pt-8 max-w-13 md:max-w-70 w-full border-r border-borderColor text-sm">
       <div className="group relative">
         <label htmlFor="image">
           <img
@@ -39,7 +39,7 @@ const Sidebar = () => {
                   "https://toppng.com/uploads/preview/donna-picarro-dummy-avatar-115633298255iautrofxa.png"
             }
             alt="Dummy User"
-            className="h-9 w-14 md:h-14 rounded-full mx-auto"
+            className="h-[40px] w-[40px] md:h-11 rounded-full mx-auto"
           />
           <input
             type="file"
@@ -64,7 +64,7 @@ const Sidebar = () => {
       )}
       <p className="mt-2 text-base max-md:hidden">{user?.name}</p>
 
-      <div className="w-full">
+      <div className="w-[51px]">
         {ownerMenuLinks.map((link, index) => (
           <NavLink
             key={index}

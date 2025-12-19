@@ -26,10 +26,10 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="h-screen flex flex-col items-center justify-center gap-14 bg-light text-center">
+      className="h-screen flex flex-col items-center justify-center gap-14 bg-white text-center mt-10">
       <motion.h1
-        initial={{ y: 50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: 50, opacity: 0, y:-10}}
+        animate={{ y: 0, opacity: 1, y:0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-4xl md:text-5xl font-semibold">
         Luxury Cars on Rent
@@ -40,7 +40,7 @@ const Hero = () => {
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         onSubmit={handleSearch}
-        className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white shadow-[0px_0px_300px_41px_rgba(165,_39,_255,_0.1)]">
+        className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white md:shadow-[8px_28px_300px_0px_rgba(165,_39,_255,_0.48)] shadow-[0px_0px_5px_0px_rgba(165,_39,_255,_0.48)]">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-10 min-md:ml-8 ">
           <div className="flex flex-col items-start gap-2 ">
             <select

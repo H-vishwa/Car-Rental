@@ -6,7 +6,7 @@ export const protect = async (req, res, next) => {
   if (!token) {
     return res.json({
       success: false,
-      message: "You are not authorized",
+      message: "Access denied. Please log in to continue.",
     });
   }
   try {
