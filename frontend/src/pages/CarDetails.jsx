@@ -162,6 +162,7 @@ const CarDetails = () => {
               onChange={(e) => setReturnDate(e.target.value)}
               type="date"
               className="border border-borderColor px-3 py-2 rounded-lg"
+              min={pickupDate || new Date().toISOString().split("T")[0]}
               required
               id="return-date"
             />
