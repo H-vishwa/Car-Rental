@@ -179,7 +179,7 @@ const CarDetails = () => {
       </div>
     </div>
   ) : (
-    <Loader className="" />
+    <Loader />
   );
 };
 

@@ -64,14 +64,14 @@ const Sidebar = () => {
       )}
       <p className="mt-2 text-base max-md:hidden">{user?.name}</p>
 
-      <div className="w-[51px]">
+      <div className="w-45 flex flex-col gap-2">
         {ownerMenuLinks.map((link, index) => (
           <NavLink
             key={index}
             to={link.path}
-            className={`relative flex items-center gap-2 w-full py-3 pl-4 first:mt-6 ${
+            className={`relative flex items-center gap-2 w-full py-3 pl-4 p first:mt-6 ${
               link.path === location.pathname
-                ? "bg-primary/10 text-primary"
+                ? "bg-primary/15 text-primary"
                 : "text-gray-600"
             }`}>
             <img
@@ -81,10 +81,6 @@ const Sidebar = () => {
               alt="Car Icon"
             />
             <span className="max-md:hidden">{link.name}</span>
-            <div
-              className={`${
-                link.path === location.pathname && "bg-primary"
-              } w-1.5 h-8 rounded-l right-0 absolute`}></div>
           </NavLink>
         ))}
       </div>
