@@ -41,7 +41,7 @@ const Hero = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         onSubmit={handleSearch}
         className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white md:shadow-[8px_28px_300px_0px_rgba(165,_39,_255,_0.48)] shadow-[0px_0px_5px_0px_rgba(165,_39,_255,_0.48)]">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-10 min-md:ml-8 ">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-10 md:ml-8 ">
           <div className="flex flex-col items-start gap-2 ">
             <select
               required

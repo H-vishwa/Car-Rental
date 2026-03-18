@@ -1,6 +1,6 @@
 import Title from "./Title";
 import CarCard from "./CarCard";
-import { assets, dummyCarData } from "../assets/assets";
+import { assets } from "../assets/assets";
 import { useNavigate } from "react-router";
 import { useAppContext } from "../context/AppContext";
 import { motion } from "motion/react";
