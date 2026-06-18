@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import CarCard from "../components/CarCard";
 import { useSearchParams } from "react-router";
 import { useAppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
+import { Input } from "@/components/ui/input";
+import { assets } from "../assets/assets";
 
 const Cars = () => {
-  //getting search parameter from url
   const [searchParams] = useSearchParams();
   const pickupLocation = searchParams.get("pickupLocation");
   const pickupDate = searchParams.get("pickupDate");
@@ -17,7 +17,6 @@ const Cars = () => {
   const { cars, axios } = useAppContext();
 
   const [input, setInput] = useState("");
-
   const isSearchdata = pickupLocation && pickupDate && returnDate;
   const [filteredCars, setFilteredCars] = useState([]);
 
@@ -26,7 +25,6 @@ const Cars = () => {
       setFilteredCars(cars);
       return null;
     }
-
     const filtered = cars.slice().filter((car) => {
       return (
         car.brand.toLowerCase().includes(input.toLowerCase()) ||
@@ -67,7 +65,7 @@ const Cars = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col items-center py-20 bg-light max-md:px-4">
+        className="flex flex-col items-center py-20 bg-background max-md:px-4">
         <Title
           title={"Available Cars"}
           subTitle={
@@ -79,25 +77,23 @@ const Cars = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center bg-white px-4 mt-6 max-w-140 w-full h-12 rounded-full shadow-[0px_0px_300px_41px_rgba(165,_39,_255,_0.48)]">
+          className="relative mt-6 max-w-140 w-full">
           <img
             src={assets.search_icon}
             alt="search"
-            className="w-4.5 h-4.5 mr-2"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 invert brightness-75 pointer-events-none"
           />
-
-          <input
+          <Input
             onChange={(e) => setInput(e.target.value)}
             value={input}
             type="text"
-            placeholder="Search by make, models or features"
-            className="w-full h-full outline-none text-gray-500"
+            placeholder="Search by make, model or features"
+            className="pl-9 pr-10 h-12 rounded-full"
           />
-
           <img
             src={assets.filter_icon}
-            alt="search"
-            className="w-4.5 h-4.5 ml-2"
+            alt="filter"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 invert brightness-75 pointer-events-none"
           />
         </motion.div>
       </motion.div>
@@ -107,7 +103,7 @@ const Cars = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
         className="mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
-        <p className="text-gray-500 xl:px-20 max-w-7xl mx-auto">
+        <p className="text-muted-foreground xl:px-20 max-w-7xl mx-auto">
           Showing {filteredCars.length} Cars
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto">

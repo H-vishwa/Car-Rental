@@ -7,7 +7,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="text-gray-500/80 mt-60 text-sm px-6 md:px-16 lg:px-24 xl:px-32">
+      className="text-zinc-400 mt-60 text-sm px-6 md:px-16 lg:px-24 xl:px-32">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ const Footer = () => {
         className="flex flex-wrap justify-between items-start gap-8 pb-6 border-borderColor border-b">
         <div>
           <motion.img
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -27,7 +27,7 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="max-w-80 mt-3">
+            className="max-w-80 mt-3 text-zinc-400">
             Premium car rental service with a wide selection of luxury and
             everyday vehicles for all your driving needs.
           </motion.p>
@@ -37,32 +37,32 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="flex items-center gap-3 mt-6">
             {/* Instagram */}
-            <a href="#">
+            <a href="#" className="hover:text-primary transition-colors">
               <img
                 src={assets.instagram_logo}
                 alt="Instagram"
-                className="w-5 h-5"
+                className="w-5 h-5 invert brightness-75 hover:brightness-100 transition-all"
               />
             </a>
             {/* Facebook */}
-            <a href="#">
+            <a href="#" className="hover:text-primary transition-colors">
               <img
                 src={assets.facebook_logo}
                 alt="Facebook"
-                className="w-5 h-5"
+                className="w-5 h-5 invert brightness-75 hover:brightness-100 transition-all"
               />
             </a>
             {/* Twitter */}
-            <a href="#">
+            <a href="#" className="hover:text-primary transition-colors">
               <img
                 src={assets.twitter_logo}
                 alt="Twitter"
-                className="w-5 h-5"
+                className="w-5 h-5 invert brightness-75 hover:brightness-100 transition-all"
               />
             </a>
             {/* G-mail */}
-            <a href="#">
-              <img src={assets.gmail_logo} alt="Gmail" className="w-5 h-5" />
+            <a href="#" className="hover:text-primary transition-colors">
+              <img src={assets.gmail_logo} alt="Gmail" className="w-5 h-5 invert brightness-75 hover:brightness-100 transition-all" />
             </a>
           </motion.div>
         </div>
@@ -72,50 +72,50 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap justify-between w-1/2 gap-8">
           <div>
-            <h2 className="text-base font-medium text-gray-800 uppercase">
+            <h2 className="text-base font-semibold text-zinc-100 uppercase">
               Quick Links
             </h2>
             <ul className="mt-3 flex flex-col gap-1.5">
               <li>
-                <a href="#">Home</a>
+                <a href="#" className="hover:text-primary transition-colors">Home</a>
               </li>
               <li>
-                <a href="#">Browse Cars</a>
+                <a href="#" className="hover:text-primary transition-colors">Browse Cars</a>
               </li>
               <li>
-                <a href="#">List Your Car</a>
+                <a href="#" className="hover:text-primary transition-colors">List Your Car</a>
               </li>
               <li>
-                <a href="#">About Us</a>
+                <a href="#" className="hover:text-primary transition-colors">About Us</a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-base font-medium text-gray-800 uppercase">
+            <h2 className="text-base font-semibold text-zinc-100 uppercase">
               Resources
             </h2>
             <ul className="mt-3 flex flex-col gap-1.5">
               <li>
-                <a href="#">Help Center</a>
+                <a href="#" className="hover:text-primary transition-colors">Help Center</a>
               </li>
               <li>
-                <a href="#">Terms of Service</a>
+                <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
               </li>
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               </li>
               <li>
-                <a href="#">Insurance</a>
+                <a href="#" className="hover:text-primary transition-colors">Insurance</a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-base font-medium text-gray-800 uppercase">
+            <h2 className="text-base font-semibold text-zinc-100 uppercase">
               Contact
             </h2>
-            <ul className="mt-3 flex flex-col gap-1.5">
+            <ul className="mt-3 flex flex-col gap-1.5 text-zinc-400">
               <li>27 Marine Drive</li>
               <li>Mumbai, Maharashtra 400020</li>
               <li>+91 98765 43210</li>
@@ -132,13 +132,13 @@ const Footer = () => {
         <p>© {new Date().getFullYear()} CarRental. All rights reserved.</p>
         <ul className="flex items-center gap-4">
           <li>
-            <a href="#">Terms</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms</a>
           </li>
           <li>
-            <a href="#">Privacy</a>
+            <a href="#" className="hover:text-primary transition-colors">Privacy</a>
           </li>
           <li>
-            <a href="#">Cookies</a>
+            <a href="#" className="hover:text-primary transition-colors">Cookies</a>
           </li>
         </ul>
       </motion.div>

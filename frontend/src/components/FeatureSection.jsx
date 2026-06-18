@@ -48,8 +48,8 @@ const FeatureSection = () => {
           navigate("/cars");
           scrollTo(0, 0);
         }}
-        className="flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-gray-300/75 rounded-md mt-18 cursor-pointer">
-        Explore all cars <img src={assets.arrow_icon} alt="arrow" />
+        className="group flex items-center justify-center gap-2 px-6 py-2.5 border border-borderColor hover:border-primary hover:text-primary rounded-md mt-18 cursor-pointer text-zinc-300 font-medium transition-all duration-300">
+        Explore all cars <img src={assets.arrow_icon} alt="arrow" className="invert brightness-75 group-hover:translate-x-1 transition-transform" />
       </motion.button>
     </motion.div>
   );

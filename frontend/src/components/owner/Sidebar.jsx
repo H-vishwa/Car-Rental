@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router";
 import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 
-const Sidebar = () => {
+const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const { user, axios, fetchUser } = useAppContext();
   const location = useLocation();
   const [image, setImage] = useState();
@@ -28,7 +28,11 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="relative min-h-screen md:flex flex-col items-center pt-8 max-w-13 md:max-w-70 w-full border-r border-borderColor text-sm">
+    <div
+      className={`fixed md:sticky top-[65px] left-0 h-[calc(100vh-65px)] z-40 flex flex-col items-center pt-8 bg-background border-r border-border text-sm transition-transform duration-300 md:translate-x-0 w-60 md:w-64 ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
       <div className="group relative">
         <label htmlFor="image">
           <img
@@ -39,7 +43,7 @@ const Sidebar = () => {
                   "https://toppng.com/uploads/preview/donna-picarro-dummy-avatar-115633298255iautrofxa.png"
             }
             alt="Dummy User"
-            className="h-[40px] w-[42px] md:h-11 rounded-full mx-auto"
+            className="h-11 w-11 rounded-full mx-auto object-cover"
           />
           <input
             type="file"
@@ -62,25 +66,27 @@ const Sidebar = () => {
           Save <img src={assets.check_icon} width={13} alt="check icon" />
         </button>
       )}
-      <p className="mt-2 text-base max-md:hidden">{user?.name}</p>
+      <p className="mt-2 text-base font-medium text-foreground">{user?.name}</p>
 
-      <div className="w-45 flex flex-col gap-2">
+      <div className="w-full px-6 flex flex-col gap-1.5 mt-8">
         {ownerMenuLinks.map((link, index) => (
           <NavLink
             key={index}
             to={link.path}
-            className={`relative flex items-center gap-2 w-full py-3 pl-4 p first:mt-6 ${
+            onClick={() => setIsSidebarOpen(false)}
+            className={`relative flex items-center gap-3 w-full py-3 px-4 rounded-lg transition-all duration-200 ${
               link.path === location.pathname
-                ? "bg-primary/15 text-primary"
-                : "text-gray-600"
+                ? "bg-primary/10 text-primary font-semibold"
+                : "text-muted-foreground hover:text-foreground hover:bg-card/40"
             }`}>
             <img
               src={
                 link.path === location.pathname ? link.coloredIcon : link.icon
               }
-              alt="Car Icon"
+              alt={link.name}
+              className="w-4 h-4 shrink-0"
             />
-            <span className="max-md:hidden">{link.name}</span>
+            <span className="whitespace-nowrap">{link.name}</span>
           </NavLink>
         ))}
       </div>

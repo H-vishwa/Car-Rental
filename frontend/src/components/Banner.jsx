@@ -1,40 +1,43 @@
 import { assets } from "../assets/assets";
 import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
 
 const Banner = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col md:flex-row items-center md:items-start justify-between px-8 min-md:pl-14 mt-10 pt-10 bg-gradient-to-r from-[#5335a2] to-[#a59aeb] max-w-6xl mx-3 md:mx-auto rounded-2xl overflow-hidden shadow-[0px_0px_300px_10px_rgba(165,_39,_255,_0.48)]">
-      <div className="text-white">
-        <h2 className="text-3xl font-medium">Do You Own a Luxury Car?</h2>
-        <p className="mt-2">
-          Monetize your vehicle effortlessly by listing it on CarRental.
+      className="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 mt-16 py-12 md:py-8 bg-gradient-to-r from-card via-[#221712] to-card max-w-6xl mx-3 md:mx-auto rounded-2xl overflow-hidden border border-primary/20 shadow-[0px_0px_50px_rgba(255,107,0,0.1)]"
+    >
+      <div className="text-left flex-1 md:pr-8">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
+          Do You Own a <span className="text-primary">Luxury Car</span>?
+        </h2>
+        <p className="mt-3 text-muted-foreground text-sm/relaxed max-w-lg">
+          Monetize your vehicle effortlessly by listing it on CarRental. We take care of insurance, driver verification and secure payments — so you can earn passive income, stress-free.
         </p>
-        <p className="max-w-130">
-          We take care of insurance, driver verification and secure payments —
-          so you can earn passive income, stress-free.
-        </p>
-        <motion.button
+        <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-6 py-2 bg-white hover:bg-slate-100 transition-transform duration-300 ease-in-out  text-primary rounded-lg text-sm mt-4 cursor-pointer ">
-          List your Car
-        </motion.button>
+          className="mt-6 w-fit"
+        >
+          <Button className="px-6 py-5 rounded-lg font-semibold cursor-pointer shadow-[0_4px_20px_rgba(255,107,0,0.2)]">
+            List your Car
+          </Button>
+        </motion.div>
       </div>
       <motion.img
-        initial={{ opacity: 0, scale: 0.7 }}
-        whileInView={{ opacity: 1, scale: 1
-         }}
-        transition={{ duration: 0.7}}
+        initial={{ opacity: 0, x: 50, scale: 0.9 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         src={assets.banner_car_image}
         alt="BMW"
-        className="max-h-45 mt-10"
+        className="max-h-52 w-auto object-contain mt-8 md:mt-0 drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
       />
     </motion.div>
   );
 };
 
 export default Banner;
+

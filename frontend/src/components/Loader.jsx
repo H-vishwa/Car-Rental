@@ -16,7 +16,7 @@ const StyledWrapper = styled.div`
   .three-body {
     --uib-size: 35px;
     --uib-speed: 0.8s;
-    --uib-color: #6d4ad3;
+    --uib-color: #ff6b00;
     position: relative;
     display: inline-block;
     height: var(--uib-size);

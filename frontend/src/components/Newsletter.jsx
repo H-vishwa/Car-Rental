@@ -12,31 +12,30 @@ const Newsletter = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="md:text-4xl text-2xl font-semibold">
+        className="md:text-4xl text-2xl font-extrabold tracking-tight text-white">
         Never Miss a Deal!
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="md:text-lg text-gray-500/70 pb-8">
-        Subscribe to get the latest offers, new arrivals, and exclusive
-        discounts
+        className="md:text-base text-muted-foreground pb-8 max-w-lg">
+        Subscribe to get the latest offers, new arrivals, and exclusive discounts.
       </motion.p>
       <motion.form
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="flex items-center justify-between max-w-2xl w-full md:h-13 h-12">
+        className="flex items-center justify-between max-w-xl w-full md:h-13 h-12 bg-card rounded-lg border border-border focus-within:border-primary/50 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">
         <input
-          className="border border-gray-300 rounded-md h-full border-r-0 outline-none w-full rounded-r-none px-3 text-gray-500"
-          type="text"
+          className="h-full bg-transparent border-0 outline-none w-full px-5 text-foreground placeholder:text-muted-foreground/50 text-sm"
+          type="email"
           placeholder="Enter your email id"
           required
         />
         <button
           type="submit"
-          className="md:px-12 px-8 h-full text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer rounded-md rounded-l-none">
+          className="md:px-10 px-6 h-full text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer rounded-r-lg font-semibold text-sm shadow-[0_4px_20px_rgba(255,107,0,0.2)]">
           Subscribe
         </button>
       </motion.form>
