@@ -1,16 +1,16 @@
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import { Route, Routes, useLocation } from "react-router";
-import Home from "./pages/Home";
-import CarDetails from "./pages/CarDetails";
-import Cars from "./pages/Cars";
-import MyBookings from "./pages/MyBookings";
-import Footer from "./components/Footer";
+import Home from "./pages/user/Home";
+import CarDetails from "./pages/user/CarDetails";
+import Cars from "./pages/user/Cars";
+import MyBookings from "./pages/user/MyBookings";
+import Footer from "./components/layout/Footer";
 import Layout from "./pages/owner/Layout";
 import Dashboard from "./pages/owner/Dashboard";
 import AddCard from "./pages/owner/AddCard";
 import ManageCars from "./pages/owner/ManageCars";
 import ManageBookings from "./pages/owner/ManageBookings";
-import Login from "./components/Login";
+import Login from "./pages/auth/Login";
 import { Toaster } from "react-hot-toast";
 import { useAppContext } from "./context/AppContext";
 

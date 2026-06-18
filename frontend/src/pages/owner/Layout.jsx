@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Sidebar from "../../components/owner/Sidebar";
-import NavbarOwner from "../../components/owner/NavbarOwner";
+import Sidebar from "../../components/layout/Sidebar";
+import NavbarOwner from "../../components/layout/NavbarOwner";
 import { Outlet } from "react-router";
 import { useAppContext } from "../../context/AppContext";
 

@@ -1,5 +1,5 @@
 import { assets } from "../assets/assets";
-import Title from "./Title";
+import Title from "./common/Title";
 import { motion } from "motion/react";
 
 const Testimonial = () => {

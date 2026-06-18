@@ -8,7 +8,7 @@ import {
   listOwnerCars,
   toggleCarAvailability,
   updateUserImage,
-} from "../controllers/OwnerController.js";
+} from "../controllers/ownerController.js";
 import upload from "../middleware/multer.js";
 
 const ownerRouter = express.Router();

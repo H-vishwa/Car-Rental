@@ -6,7 +6,7 @@ import {
   createBooking,
   getOwnerBookings,
   getUserBooking,
-} from "../controllers/BookingController.js";
+} from "../controllers/bookingController.js";
 
 const bookingRouter = express.Router();
 

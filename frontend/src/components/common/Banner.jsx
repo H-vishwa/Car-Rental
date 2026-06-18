@@ -1,4 +1,4 @@
-import { assets } from "../assets/assets";
+import { assets } from "../../assets/assets";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
@@ -40,4 +40,3 @@ const Banner = () => {
 };
 
 export default Banner;
-

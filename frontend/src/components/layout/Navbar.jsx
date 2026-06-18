@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { assets, menuLinks } from "../assets/assets";
-import { useAppContext } from "../context/AppContext";
+import { assets, menuLinks } from "../../assets/assets";
+import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
@@ -55,8 +55,6 @@ const Navbar = () => {
             {link.name}
           </Link>
         ))}
-
-
 
         <div className="flex items-center gap-3">
           <Button

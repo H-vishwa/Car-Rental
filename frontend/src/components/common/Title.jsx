@@ -7,4 +7,4 @@ const Title = ({ title, subTitle, align }) => {
   );
 };
 
-export default Title
+export default Title;

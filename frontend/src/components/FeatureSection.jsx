@@ -1,4 +1,4 @@
-import Title from "./Title";
+import Title from "./common/Title";
 import CarCard from "./CarCard";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router";

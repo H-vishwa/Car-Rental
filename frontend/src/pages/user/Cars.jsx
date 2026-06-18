@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import Title from "../components/Title";
-import CarCard from "../components/CarCard";
+import Title from "../../components/common/Title";
+import CarCard from "../../components/CarCard";
 import { useSearchParams } from "react-router";
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
-import { assets } from "../assets/assets";
+import { assets } from "../../assets/assets";
 
 const Cars = () => {
   const [searchParams] = useSearchParams();

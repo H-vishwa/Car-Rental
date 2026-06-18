@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { assets } from "../assets/assets";
-import Loader from "../components/Loader";
-import { useAppContext } from "../context/AppContext";
+import { assets } from "../../assets/assets";
+import Loader from "../../components/common/Loader";
+import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

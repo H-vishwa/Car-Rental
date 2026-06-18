@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { assets } from "../assets/assets";
-import Title from "../components/Title";
-import { useAppContext } from "../context/AppContext";
+import { assets } from "../../assets/assets";
+import Title from "../../components/common/Title";
+import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 import { motion } from "motion/react";
 import { Card, CardContent } from "@/components/ui/card";
