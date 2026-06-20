@@ -1,11 +1,7 @@
 import mongoose from "mongoose";
 import dns from "dns";
 
-try {
-  dns.setServers(["1.1.1.1", "8.8.8.8"]);
-} catch (error) {
-  console.warn("Setting DNS servers failed:", error.message);
-}
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 const connectDB = async () => {
   try {
