@@ -72,8 +72,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/[0.05] text-primary text-[10px] font-bold uppercase tracking-widest"
-        >
+          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/[0.05] text-primary text-[10px] font-bold uppercase tracking-widest">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
           Exclusively Luxury Cars Only
         </motion.div>
@@ -81,29 +80,74 @@ const Hero = () => {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase font-heading"
-        >
+          className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase font-heading">
           Drive Your Dream
         </motion.h1>
         <motion.p
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="text-sm md:text-base text-muted-foreground/80 leading-relaxed px-4 max-w-xl"
-        >
+          className="text-sm md:text-base text-muted-foreground/80 leading-relaxed px-4 max-w-xl">
           We rent high-end luxury vehicles and exotic supercars only. Experience
-          unparalleled prestige, comfort, and performance. Find your perfect ride
-          anytime, anywhere.
+          unparalleled prestige, comfort, and performance. Find your perfect
+          ride anytime, anywhere.
         </motion.p>
       </div>
 
       {/* Centerpiece: Glowing Eclipse & Floating Car */}
       <div className="relative flex items-center justify-center w-full max-w-lg h-60 md:h-76 my-6">
-        {/* Glow behind */}
-        <div className="absolute w-[320px] h-[320px] md:w-[420px] md:h-[420px] rounded-full bg-[#ff5500]/20 blur-3xl -z-20"></div>
+        {/* Outer atmospheric haze */}
+        <div
+          className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full -z-20"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(255,100,0,0.22) 0%, rgba(200,50,0,0.10) 55%, transparent 75%)",
+            filter: "blur(28px)",
+          }}
+        />
 
-        {/* Glowing Eclipse Sphere */}
-        <div className="absolute w-[180px] h-[180px] md:w-[230px] md:h-[230px] rounded-full bg-gradient-to-br from-[#1a0000] via-[#4d0000] to-[#0d0000] opacity-95 shadow-[0_0_90px_rgba(255,80,0,0.8),0_0_180px_rgba(255,140,0,0.45),0_0_260px_rgba(255,60,0,0.25),inset_10px_10px_20px_rgba(255,160,0,0.95),inset_-15px_-15px_30px_rgba(0,0,0,0.95)] -z-10 animate-pulse"></div>
+        {/* Orbital Ring 1 — forward spin */}
+        <div
+          className="absolute w-[210px] h-[210px] md:w-[268px] md:h-[268px] rounded-full -z-10 sun-ring"
+          style={{
+            background:
+              "conic-gradient(from 0deg, transparent 0%, transparent 55%, rgba(255,140,30,0.55) 68%, rgba(255,200,80,0.85) 75%, rgba(255,140,30,0.55) 82%, transparent 95%, transparent 100%)",
+            WebkitMask:
+              "radial-gradient(circle, transparent 85%, black 87%, black 100%)",
+            mask: "radial-gradient(circle, transparent 85%, black 87%, black 100%)",
+          }}
+        />
+
+        {/* Orbital Ring 2 — reverse slower spin, faint */}
+        <div
+          className="absolute w-[222px] h-[222px] md:w-[284px] md:h-[284px] rounded-full -z-10 sun-ring-reverse"
+          style={{
+            background:
+              "conic-gradient(from 180deg, transparent 0%, transparent 40%, rgba(255,90,0,0.2) 55%, rgba(255,160,40,0.35) 65%, rgba(255,90,0,0.2) 75%, transparent 90%, transparent 100%)",
+            WebkitMask:
+              "radial-gradient(circle, transparent 86%, black 88%, black 100%)",
+            mask: "radial-gradient(circle, transparent 86%, black 88%, black 100%)",
+          }}
+        />
+
+        {/* Eclipse Sun Sphere */}
+        <div
+          className="absolute w-[180px] h-[180px] md:w-[230px] md:h-[230px] rounded-full -z-10 overflow-hidden"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 50%, #080000 0%, #120300 18%, #260700 34%, #4a0e00 48%, #7d1c00 60%, #b83200 71%, #e85200 79%, #ff7000 86%, #ff9500 92%, #ffb020 97%, #ffcc40 100%)",
+            boxShadow:
+              "0 0 60px 10px rgba(255,100,0,0.8), 0 0 120px 20px rgba(255,60,0,0.4), 0 0 200px 30px rgba(200,40,0,0.2), inset 0 0 40px rgba(255,120,0,0.15)",
+          }}>
+          {/* Rotating corona highlight — simulates shifting light source */}
+          <div
+            className="absolute inset-0 rounded-full sun-sphere"
+            style={{
+              background:
+                "conic-gradient(from 0deg, transparent 0%, transparent 30%, rgba(255,160,40,0.18) 45%, rgba(255,200,80,0.28) 55%, rgba(255,140,20,0.18) 65%, transparent 80%, transparent 100%)",
+            }}
+          />
+        </div>
 
         {/* Floating Car */}
         <motion.img
@@ -158,8 +202,7 @@ const Hero = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.7 }}
         onSubmit={handleSearch}
-        className="w-[92%] max-w-sm md:max-w-4xl p-5 md:py-4 md:px-8 rounded-2xl md:rounded-full backdrop-blur-xl bg-black/35 border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 md:gap-4 scroll-mt-24"
-      >
+        className="w-[92%] max-w-sm md:max-w-4xl p-5 md:py-4 md:px-8 rounded-2xl md:rounded-full backdrop-blur-xl bg-black/35 border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 md:gap-4 scroll-mt-24">
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-5 md:gap-8 w-full">
           {/* Location */}
           <div className="flex flex-col items-start gap-1 w-full md:w-auto min-w-[140px]">
@@ -169,8 +212,7 @@ const Hero = () => {
             <Select
               required
               value={pickupLocation}
-              onValueChange={(val) => setPickupLocation(val)}
-            >
+              onValueChange={(val) => setPickupLocation(val)}>
               <SelectTrigger className="w-full border-0 shadow-none bg-transparent focus:ring-0 h-auto p-0 text-sm font-semibold justify-between flex text-white cursor-pointer hover:text-white/80 transition-colors">
                 <SelectValue placeholder="Pickup Location" />
               </SelectTrigger>
@@ -197,8 +239,7 @@ const Hero = () => {
                   type="button"
                   variant="ghost"
                   id="pickup-date"
-                  className="w-full md:w-auto h-auto px-0 py-0.5 font-semibold text-sm justify-start gap-2 cursor-pointer hover:bg-transparent text-left text-white hover:text-white/80 transition-colors"
-                >
+                  className="w-full md:w-auto h-auto px-0 py-0.5 font-semibold text-sm justify-start gap-2 cursor-pointer hover:bg-transparent text-left text-white hover:text-white/80 transition-colors">
                   <CalendarBlank className="h-4.5 w-4.5 text-primary shrink-0" />
                   {pickupDate
                     ? format(new Date(pickupDate), "PPP")
@@ -235,8 +276,7 @@ const Hero = () => {
                   type="button"
                   variant="ghost"
                   id="return-date"
-                  className="w-full md:w-auto h-auto px-0 py-0.5 font-semibold text-sm justify-start gap-2 cursor-pointer hover:bg-transparent text-left text-white hover:text-white/80 transition-colors"
-                >
+                  className="w-full md:w-auto h-auto px-0 py-0.5 font-semibold text-sm justify-start gap-2 cursor-pointer hover:bg-transparent text-left text-white hover:text-white/80 transition-colors">
                   <CalendarBlank className="h-4.5 w-4.5 text-primary shrink-0" />
                   {returnDate
                     ? format(new Date(returnDate), "PPP")
@@ -267,12 +307,10 @@ const Hero = () => {
         <motion.div
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full md:w-auto"
-        >
+          className="w-full md:w-auto">
           <Button
             type="submit"
-            className="w-full md:w-auto px-8 py-5 md:py-4 rounded-full cursor-pointer font-bold gap-2 bg-primary hover:bg-primary/95 text-white shadow-lg transition-all duration-200"
-          >
+            className="w-full md:w-auto px-8 py-5 md:py-4 rounded-full cursor-pointer font-bold gap-2 bg-primary hover:bg-primary/95 text-white shadow-lg transition-all duration-200">
             <MagnifyingGlass className="w-4 h-4" />
             Search
           </Button>
