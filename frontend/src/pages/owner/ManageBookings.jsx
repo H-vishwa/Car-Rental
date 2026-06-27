@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Title from "../../components/owner/Title";
 import { useAppContext } from "../../context/AppContext";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,

@@ -9,7 +9,9 @@ const Home = () => {
     <>
         <Hero />
         <FeatureSection />
-        <Banner />
+        <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <Banner />
+        </div>
         <Testimonial />
         <Newsletter />
     </>

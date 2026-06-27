@@ -14,7 +14,7 @@ const FeatureSection = () => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="flex flex-col gap-4 items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32">
+      className="flex flex-col gap-4 items-center py-24 px-6 md:px-16 lg:px-24 xl:px-32 reveal-fade">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -29,13 +29,15 @@ const FeatureSection = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18">
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18 reveal-stagger-container">
         {cars.slice(0, 6).map((car) => (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            key={car._id}>
+            key={car._id}
+            className="reveal-stagger-item"
+          >
             <CarCard car={car} />
           </motion.div>
         ))}

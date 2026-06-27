@@ -3,7 +3,7 @@ import Title from "../../components/common/Title";
 import CarCard from "../../components/CarCard";
 import { useSearchParams } from "react-router";
 import { useAppContext } from "../../context/AppContext";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { assets } from "../../assets/assets";
@@ -60,12 +60,27 @@ const Cars = () => {
   }, [input, cars]);
 
   return (
-    <div>
+    <div className="relative overflow-hidden min-h-screen pt-28 pb-16 bg-[#09090b] isolate">
+      {/* Background Ripple Rings */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-10 flex items-center justify-center">
+        <div className="absolute w-[400px] h-[400px] rounded-full border border-white/[0.04]"></div>
+        <div className="absolute w-[700px] h-[700px] rounded-full border border-white/[0.03]"></div>
+        <div className="absolute w-[1000px] h-[1000px] rounded-full border border-white/[0.02]"></div>
+      </div>
+
+      {/* Edge Vignette Gradients */}
+      <div className="absolute inset-0 pointer-events-none -z-20">
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-r from-[#ff5500]/[0.05] to-transparent"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-36 bg-gradient-to-l from-[#ff5500]/[0.05] to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#ff5500]/[0.03] to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#09090b] to-transparent"></div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex flex-col items-center py-20 bg-background max-md:px-4">
+        className="flex flex-col items-center max-w-7xl mx-auto max-md:px-4">
         <Title
           title={"Available Cars"}
           subTitle={
@@ -93,7 +108,7 @@ const Cars = () => {
           <img
             src={assets.filter_icon}
             alt="filter"
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 invert brightness-75 pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 invert opacity-75 pointer-events-none"
           />
         </motion.div>
       </motion.div>
@@ -102,19 +117,18 @@ const Cars = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="mt-10 px-6 md:px-16 lg:px-24 xl:px-32">
+        className="mt-10 px-6 md:px-16 lg:px-24 xl:px-32 reveal-fade">
         <p className="text-muted-foreground xl:px-20 max-w-7xl mx-auto">
           Showing {filteredCars.length} Cars
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto reveal-stagger-container">
           {filteredCars.map((car, index) => (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.1 * index }}
-              key={index}>
+            <div
+              key={index}
+              className="reveal-stagger-item"
+            >
               <CarCard car={car} />
-            </motion.div>
+            </div>
           ))}
         </div>
       </motion.div>

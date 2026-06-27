@@ -2,7 +2,7 @@ import { useState } from "react";
 import Title from "../../components/owner/Title";
 import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
-import toast from "react-hot-toast";
+import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -75,7 +75,7 @@ const AddCard = () => {
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="px-4 py-10 md:px-10 flex-1 max-w-4xl"
+      className="px-4 py-10 md:px-10 flex-1 max-w-4xl overflow-y-auto"
     >
       <Title
         title={"Add New Car"}
@@ -322,7 +322,7 @@ const AddCard = () => {
           className="flex justify-end mt-2"
         >
           <Button type="submit" disabled={isLoading} className="px-8 py-5 rounded-lg font-semibold gap-2 cursor-pointer shadow-[0_4px_20px_rgba(255,107,0,0.2)]">
-            <img src={assets.tick_icon} alt="Tick" className="w-4 h-4 invert" />
+            <img src={assets.tick_icon} alt="Tick" className="w-4 h-4 " />
             {isLoading ? "Listing..." : "List your car"}
           </Button>
         </motion.div>

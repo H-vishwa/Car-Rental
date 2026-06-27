@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { toast } from "react-hot-toast";
+import { toast } from "sonner";
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
