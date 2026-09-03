@@ -52,7 +52,11 @@ const Footer = () => {
           <motion.img
             whileHover={{ scale: 1.02 }}
             src={assets.logo}
-            alt="logo"
+            alt="CarRental brand logo"
+            loading="lazy"
+            decoding="async"
+            width={120}
+            height={32}
             className="h-8 w-auto self-start"
           />
           <p className="text-muted-foreground leading-relaxed max-w-72">
@@ -142,34 +146,50 @@ const Footer = () => {
         {/* Floating Social Pill */}
         <div className="flex items-center gap-5 bg-white/[0.02] border border-white/[0.06] backdrop-blur-md px-6 py-2.5 rounded-full shadow-md">
           {/* Instagram */}
-          <a href="#" className="hover:text-primary transition-colors">
+          <a href="#" aria-label="Visit our Instagram page" className="hover:text-primary transition-colors">
             <img
               src={assets.instagram_logo}
               alt="Instagram"
+              loading="lazy"
+              decoding="async"
+              width={16}
+              height={16}
               className="w-4 h-4 invert opacity-60 hover:opacity-100 transition-all duration-200"
             />
           </a>
           {/* Facebook */}
-          <a href="#" className="hover:text-primary transition-colors">
+          <a href="#" aria-label="Visit our Facebook page" className="hover:text-primary transition-colors">
             <img
               src={assets.facebook_logo}
               alt="Facebook"
+              loading="lazy"
+              decoding="async"
+              width={16}
+              height={16}
               className="w-4 h-4 invert opacity-60 hover:opacity-100 transition-all duration-200"
             />
           </a>
           {/* Twitter */}
-          <a href="#" className="hover:text-primary transition-colors">
+          <a href="#" aria-label="Visit our Twitter page" className="hover:text-primary transition-colors">
             <img
               src={assets.twitter_logo}
               alt="Twitter"
+              loading="lazy"
+              decoding="async"
+              width={16}
+              height={16}
               className="w-4 h-4 invert opacity-60 hover:opacity-100 transition-all duration-200"
             />
           </a>
           {/* Gmail */}
-          <a href="#" className="hover:text-primary transition-colors">
+          <a href="#" aria-label="Send us an email" className="hover:text-primary transition-colors">
             <img
               src={assets.gmail_logo}
               alt="Gmail"
+              loading="lazy"
+              decoding="async"
+              width={16}
+              height={16}
               className="w-4 h-4 invert opacity-60 hover:opacity-100 transition-all duration-200"
             />
           </a>

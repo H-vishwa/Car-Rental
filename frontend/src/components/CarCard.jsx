@@ -17,7 +17,9 @@ const CarCard = ({ car }) => {
       <div className="relative h-48 overflow-hidden">
         <img
           src={car.image}
-          alt="Car Image"
+          alt={`${car.brand} ${car.model}`}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 

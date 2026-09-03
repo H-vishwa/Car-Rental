@@ -136,7 +136,11 @@ const Banner = () => {
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             src={assets.banner_car_image}
-            alt="Luxury Car"
+            alt="Luxury Rental Vehicle"
+            loading="lazy"
+            decoding="async"
+            width={400}
+            height={200}
             className="relative z-10 w-64 sm:w-80 lg:w-96 h-auto object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.7)]"
           />
         </motion.div>

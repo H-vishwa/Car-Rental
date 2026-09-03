@@ -130,6 +130,10 @@ const Testimonial = () => {
                   <img
                     src={t.image}
                     alt={t.name}
+                    loading="lazy"
+                    decoding="async"
+                    width={44}
+                    height={44}
                     className="w-11 h-11 rounded-full object-cover border border-white/[0.1] ring-2 ring-primary/10 group-hover:ring-primary/25 transition-all duration-300"
                   />
                   {/* Online dot */}

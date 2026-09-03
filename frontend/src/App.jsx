@@ -1,23 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navbar from "./components/layout/Navbar";
 import { Route, Routes, useLocation } from "react-router";
-import Home from "./pages/user/Home";
-import CarDetails from "./pages/user/CarDetails";
-import Cars from "./pages/user/Cars";
-import MyBookings from "./pages/user/MyBookings";
 import Footer from "./components/layout/Footer";
-import Layout from "./pages/owner/Layout";
-import Dashboard from "./pages/owner/Dashboard";
-import AddCard from "./pages/owner/AddCard";
-import ManageCars from "./pages/owner/ManageCars";
-import ManageBookings from "./pages/owner/ManageBookings";
-import Login from "./pages/auth/Login";
 import { Toaster } from "@/components/ui/sonner";
 import { useAppContext } from "./context/AppContext";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+
+const Home = lazy(() => import("./pages/user/Home"));
+const CarDetails = lazy(() => import("./pages/user/CarDetails"));
+const Cars = lazy(() => import("./pages/user/Cars"));
+const MyBookings = lazy(() => import("./pages/user/MyBookings"));
+const Layout = lazy(() => import("./pages/owner/Layout"));
+const Dashboard = lazy(() => import("./pages/owner/Dashboard"));
+const AddCard = lazy(() => import("./pages/owner/AddCard"));
+const ManageCars = lazy(() => import("./pages/owner/ManageCars"));
+const ManageBookings = lazy(() => import("./pages/owner/ManageBookings"));
+const Login = lazy(() => import("./pages/auth/Login"));
+
+const PageLoader = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <div className="w-8 h-8 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
+  </div>
+);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,6 +87,7 @@ const App = () => {
           el,
           { opacity: 0 },
           {
+            y: 0,
             opacity: 1,
             duration: 0.8,
             ease: "power2.out",
@@ -129,20 +137,24 @@ const App = () => {
   return (
     <>
       <Toaster richColors />
-      {showLogin && <Login />}
+      <Suspense fallback={null}>
+        {showLogin && <Login />}
+      </Suspense>
       {!isOwnerPath && <Navbar />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cars-details/:id" element={<CarDetails />} />
-        <Route path="/cars" element={<Cars />} />
-        <Route path="/my-bookings" element={<MyBookings />} />
-        <Route path="/owner" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="add-car" element={<AddCard />} />
-          <Route path="manage-cars" element={<ManageCars />} />
-          <Route path="manage-bookings" element={<ManageBookings />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cars-details/:id" element={<CarDetails />} />
+          <Route path="/cars" element={<Cars />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/owner" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="add-car" element={<AddCard />} />
+            <Route path="manage-cars" element={<ManageCars />} />
+            <Route path="manage-bookings" element={<ManageBookings />} />
+          </Route>
+        </Routes>
+      </Suspense>
       {!isOwnerPath && <Footer />}
     </>
   );

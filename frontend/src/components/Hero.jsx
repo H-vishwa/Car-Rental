@@ -40,11 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#0e0e11] via-[#09090b] to-[#09090b] text-center px-4 py-24 relative overflow-hidden isolate">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#0e0e11] via-[#09090b] to-[#09090b] text-center px-4 py-24 relative overflow-hidden isolate">
       {/* Concentric Circles Background */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-20 overflow-hidden">
         <div className="absolute w-[300px] h-[300px] rounded-full border border-white/[0.07]"></div>
@@ -68,30 +64,18 @@ const Hero = () => {
 
       {/* Hero Title & Subtitle */}
       <div className="max-w-2xl mx-auto flex flex-col items-center gap-3 mb-6 relative z-10">
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/[0.05] text-primary text-[10px] font-bold uppercase tracking-widest">
+        <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/[0.05] text-primary text-[10px] font-bold uppercase tracking-widest">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
           Exclusively Luxury Cars Only
-        </motion.div>
-        <motion.h1
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.25 }}
-          className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase font-heading">
+        </div>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase font-heading">
           Drive Your Dream
-        </motion.h1>
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
-          className="text-sm md:text-base text-muted-foreground/80 leading-relaxed px-4 max-w-xl">
+        </h1>
+        <p className="text-sm md:text-base text-muted-foreground/80 leading-relaxed px-4 max-w-xl">
           We rent high-end luxury vehicles and exotic supercars only. Experience
           unparalleled prestige, comfort, and performance. Find your perfect
           ride anytime, anywhere.
-        </motion.p>
+        </p>
       </div>
 
       {/* Centerpiece: Glowing Eclipse & Floating Car */}
@@ -149,21 +133,23 @@ const Hero = () => {
           />
         </div>
 
-        {/* Floating Car */}
+        {/* Floating Car (LCP element) */}
         <motion.img
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: [0, -10, 0], opacity: 1 }}
+          animate={{ y: [0, -10, 0] }}
           transition={{
             y: {
               repeat: Infinity,
               duration: 4,
               ease: "easeInOut",
             },
-            opacity: { duration: 0.8, delay: 0.5 },
           }}
           src={assets.main_car}
-          alt="Luxury Car"
-          className="max-h-40 md:max-h-56 object-contain z-10 filter drop-shadow-[0_25px_25px_rgba(0,0,0,0.85)]"
+          alt="Luxury Exotic Supercar"
+          fetchPriority="high"
+          decoding="async"
+          width={650}
+          height={320}
+          className="max-h-40 md:max-h-56 w-auto object-contain z-10 filter drop-shadow-[0_25px_25px_rgba(0,0,0,0.85)]"
         />
 
         {/* Shadow under car */}
@@ -316,7 +302,7 @@ const Hero = () => {
           </Button>
         </motion.div>
       </motion.form>
-    </motion.div>
+    </div>
   );
 };
 

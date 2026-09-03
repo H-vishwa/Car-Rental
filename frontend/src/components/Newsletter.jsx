@@ -8,13 +8,13 @@ const Newsletter = () => {
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
       className="flex flex-col items-center justify-center text-center space-y-2 max-md:px-4 my-10 mb-40">
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="md:text-4xl text-2xl font-extrabold tracking-tight text-white">
         Never Miss a Deal!
-      </motion.h1>
+      </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

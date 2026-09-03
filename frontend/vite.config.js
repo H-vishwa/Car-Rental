@@ -11,4 +11,30 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react": ["react", "react-dom", "react-router", "react-router-dom"],
+          "vendor-animation": ["motion", "gsap", "lenis"],
+          "vendor-icons": ["@phosphor-icons/react", "lucide-react"],
+          "vendor-ui": [
+            "radix-ui",
+            "sonner",
+            "embla-carousel-react",
+            "styled-components",
+          ],
+          "vendor-utils": [
+            "date-fns",
+            "clsx",
+            "tailwind-merge",
+            "axios",
+            "class-variance-authority",
+          ],
+        },
+      },
+    },
+  },
 });
