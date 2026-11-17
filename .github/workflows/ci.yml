@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print hello message
-        run: echo "Hello from GitHub Actions CI!"
+        run: exit 1
