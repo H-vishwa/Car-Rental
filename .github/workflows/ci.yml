@@ -35,6 +35,9 @@ jobs:
 
       - name: Build production bundle
         run: npm run build
+        env:
+          VITE_BASE_URL: https://api.example.com
+          VITE_CURRENCY: "$"
 
   backend:
     name: Backend CI
@@ -58,3 +61,5 @@ jobs:
 
       - name: Run tests
         run: npm test
+        env:
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
