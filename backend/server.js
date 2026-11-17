@@ -10,7 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 //connect database
-connectDB();
+//connect database
+if (process.env.NODE_ENV !== "test") {
+  connectDB();
+}
 
 // middleware
 app.use(cors());
@@ -24,10 +27,9 @@ app.use('/api/user',userRouter)
 app.use('/api/owner',ownerRouter)
 app.use('/api/bookings',bookingRouter)
 
-if (!process.env.VERCEL) {
+if (!process.env.VERCEL && process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
 }
-
 export default app;
