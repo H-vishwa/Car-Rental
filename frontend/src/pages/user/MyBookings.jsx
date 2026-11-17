@@ -101,7 +101,7 @@ const MyBookings = () => {
             transition={{ duration: 0.4, delay: 0.3 }}
             className="space-y-6 mt-8"
           >
-            {bookings.map((booking, index) => (
+            {bookings.map((booking) => (
               <Card
                 key={booking._id}
                 className="border border-border/80 bg-card/45 hover:bg-card/75 hover:border-primary/20 transition-all duration-300 rounded-2xl overflow-hidden shadow-lg"

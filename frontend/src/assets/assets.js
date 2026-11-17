@@ -42,7 +42,7 @@ import car_image2 from "./car_image2.webp"
 import car_image3 from "./car_image3.webp"
 import car_image4 from "./car_image4.webp"
 
-export const cityList = ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad','Chennai',, 'Kolkata', 'Ahmedabad','Pune', 'Jaipur', 'Lucknow']
+export const cityList = ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad','Chennai', 'Kolkata', 'Ahmedabad','Pune', 'Jaipur', 'Lucknow']
 
 export const assets = {
     logo,
