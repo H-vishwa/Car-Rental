@@ -1,3 +1,5 @@
+[![CI](https://github.com/H-vishwa/Car-Rental/actions/workflows/ci.yml/badge.svg)](https://github.com/H-vishwa/Car-Rental/actions/workflows/ci.yml)
+
 # Car Rental Platform
 
 A professional full-stack MERN (MongoDB, Express, React, Node.js) Car Rental application featuring role-based workflows for renters (Users) and car owners (Owners).
